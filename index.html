@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>On This Day</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="header__logo" src="./img/logo2.png" alt="logo" />
+      <h1 class="header__name">On this day</h1>
+      <div class="header__weather">
+        12 c , hot , sunny
+      </div>
+    </header>
     <main>
-        <header>
-            <h1>logo</h1>
-            <div class="weather__information">
-
-            </div>
-        </header>
-
-        <section class="container">
-
-        </section>
+      <section class="container">
+        <label for="date">Date for event</label>
+        <input
+          class="container__input"
+          id="date"
+          type="text"
+          placeholder="June_27"
+        />
+        <h2>On This Day</h2>
+        <ul class="container__events">
+          <li class="container__events__li">a</li>
+          <li class="container__events__li">g</li>
+          <li class="container__events__li">f</li>
+        </ul>
+      </section>
     </main>
     <footer class="footer">
-        <span>made by our team &copf;</span>
+      <span>made by our team &copf;</span>
     </footer>
+
     <script src="./js/api.js"></script>
     <script src="./js/dom.js"></script>
-    
-</body>
+  </body>
 </html>
