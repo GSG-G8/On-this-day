@@ -8,17 +8,31 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <header class="header">
+      <img class="header__logo" src="./img/logo2.png" alt="logo" />
+      <div class="header__weather"></div>
+    </header>
     <main>
-      <header>
-        <h1>logo</h1>
-        <div class="weather__information"></div>
-      </header>
-
-      <section class="container"></section>
+      <section class="container">
+        <label for="date">Date for event</label>
+        <input
+          class="container__input"
+          id="date"
+          type="text"
+          placeholder="June_27"
+        />
+        <h2>On This Day</h2>
+        <ul class="container__events">
+          <li class="container__events__li">a</li>
+          <li class="container__events__li">g</li>
+          <li class="container__events__li">f</li>
+        </ul>
+      </section>
     </main>
     <footer class="footer">
-      <span>made by our team &copf;</span>
+      <span>made by our team &copy;</span>
     </footer>
+
     <script src="./js/api.js"></script>
     <script src="./js/dom.js"></script>
   </body>

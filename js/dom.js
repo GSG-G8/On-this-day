@@ -1,17 +1,17 @@
 let lat = 31.5;
 let lon = 34.5;
 const weatherInfo = data => {
-  const header = document.querySelector(".weather__information");
+  const header = document.querySelector(".header__weather");
   const city = document.createElement("h1");
-  city.textContent = "city : " + data.sys.country + "-" + data.name;
+  city.textContent = data.name;
   header.appendChild(city);
 
   const descriptin = document.createElement("h1");
-  descriptin.textContent = "weather : " + data.weather[0].description;
+  descriptin.textContent = data.weather[0].description;
   header.appendChild(descriptin);
 
   const temp = document.createElement("h1");
-  temp.textContent = "temp : " + data.main.temp + "℃";
+  temp.textContent = data.main.temp + "℃";
   header.appendChild(temp);
 };
 const urlweather =
