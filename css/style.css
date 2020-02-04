@@ -41,6 +41,9 @@
 .container__input {
   width: 60%;
   margin: 5px auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid gray;
 }
 .footer {
   position: fixed;
