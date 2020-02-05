@@ -104,7 +104,7 @@
 .container__events__details {
   margin-left: 0.5rem;
   /* background-color: #11123f; */
-  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px -2px rgba(73, 36, 36, 0.5);
   /* color: #fff; */
   padding: 5px 10px;
   margin-top: 10px;
@@ -128,6 +128,7 @@ hr {
 @media (min-width: 800px) {
   .container__events {
     margin: auto;
+    width: 60%;
     margin-bottom: 100px;
   }
   .container__events__li {
