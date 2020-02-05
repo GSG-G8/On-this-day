@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>On This Day</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -14,15 +18,34 @@
     </header>
     <main>
       <section class="container">
-        <label for="date">Date for event</label>
-        <input
-          class="container__input"
-          id="date"
-          type="text"
-          placeholder="12/07 first month"
-          value="2/07"
-        />
-        <h2>On This Day</h2>
+        <h2 class="container__title">On This Day</h2>
+        <div class="container__inputGroup">
+          <label for="date">Date: </label>
+          <input
+            class="container__input"
+            id="date"
+            type="text"
+            placeholder="12/07 first month"
+            value="2/07"
+          />
+          <button class="container__sort">
+            sort <i class="fa fa-sort"></i>
+          </button>
+        </div>
+        <label for="filterByCategory"
+          >filter by
+          <select
+            id="filterByCategory"
+            name="filterByCategory"
+            class="selectCategory"
+          >
+            <option value="all">All</option>
+            <option value="events">EVENTS</option>
+            <option value="born">BORN ON THIS DAY</option>
+            <option value="died">DIED ON THIS DAY</option>
+          </select></label
+        >
+
         <ul class="container__events"></ul>
       </section>
     </main>

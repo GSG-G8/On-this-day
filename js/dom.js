@@ -14,7 +14,7 @@ const weatherInfo = data => {
   header.appendChild(descriptin);
 
   const temp = document.createElement("h1");
-  temp.textContent = data.main.temp + "℃";
+  temp.textContent = Math.round(data.main.temp) + "℃";
   header.appendChild(temp);
 };
 const urlweather =
@@ -52,3 +52,4 @@ const historyInfo = data => {
 const historyUrl = `http://history.muffinlabs.com/date/${dateToSearch.value}`;
 
 xhr(historyUrl, historyInfo);
+window.onload = document.querySelector(".container__input").focus();
