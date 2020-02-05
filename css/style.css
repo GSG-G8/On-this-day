@@ -21,19 +21,26 @@
   color: white;
   text-align: center;
 }
+.container__title {
+  margin-bottom: 20px;
+}
 .header__logo {
   width: 120px;
   margin: 20px;
   box-sizing: border-box;
 }
 .container {
-  margin-top: 10%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-.container__events {
-  list-style: none;
+.container__inputGroup {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
 }
 .container__events__li {
   margin: 10px;
@@ -41,17 +48,92 @@
 .container__input {
   width: 60%;
   margin: 5px auto;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 20px;
-  border: 2px solid gray;
+  border: 2px solid #808080;
+  margin-left: 1rem;
+}
+.container__sort {
+  width: 4rem;
+  margin: 5px auto;
+  padding: 0.7rem;
+  border-radius: 20px;
+  border: 2px solid #808080;
+  background-color: white;
+  margin-left: 1rem;
+}
+.container__sort:hover {
+  background-color: #11123f;
+  color: #fff;
+  border: none;
+}
+
+.container__input:focus {
+  outline: white;
 }
 .footer {
   position: fixed;
   bottom: 0;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   margin-top: 50px;
   color: #ffffff;
   background-color: #11123f;
   text-align: center;
+}
+
+.container__events__year {
+  background-color: #11123f;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 18px;
+  align-self: baseline;
+}
+.container__events__li {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container__events {
+  width: 90%;
+  list-style: none;
+  margin-bottom: 50px;
+}
+.container__events__details {
+  margin-left: 0.5rem;
+  /* background-color: #11123f; */
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+  /* color: #fff; */
+  padding: 5px 10px;
+  margin-top: 10px;
+  /* font-size: 18px; */
+  align-self: baseline;
+}
+hr {
+  margin: auto;
+  width: 80%;
+}
+
+.selectCategory {
+  width: 40%;
+  border-radius: 5px;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  background-color: white;
+  border: 2px solid gray;
+}
+
+@media (min-width: 800px) {
+  .container__events {
+    margin: auto;
+    margin-bottom: 100px;
+  }
+  .container__events__li {
+    flex-direction: row;
+  }
+  .container__inputGroup {
+    width: auto;
+  }
 }

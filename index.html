@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>On This Day</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -14,18 +18,69 @@
     </header>
     <main>
       <section class="container">
-        <label for="date">Date for event</label>
-        <input
-          class="container__input"
-          id="date"
-          type="text"
-          placeholder="June_27"
-        />
-        <h2>On This Day</h2>
+        <h2 class="container__title">On This Day</h2>
+        <div class="container__inputGroup">
+          <label for="date">Date: </label>
+          <input
+            class="container__input"
+            id="date"
+            type="text"
+            placeholder="June_27"
+          />
+          <button class="container__sort">
+            sort <i class="fa fa-sort"></i>
+          </button>
+        </div>
+        <label for="filterByCategory"
+          >filter by
+          <select
+            id="filterByCategory"
+            name="filterByCategory"
+            class="selectCategory"
+          >
+            <option value="all">All</option>
+            <option value="events">EVENTS</option>
+            <option value="born">BORN ON THIS DAY</option>
+            <option value="died">DIED ON THIS DAY</option>
+          </select></label
+        >
+
         <ul class="container__events">
-          <li class="container__events__li">a</li>
-          <li class="container__events__li">g</li>
-          <li class="container__events__li">f</li>
+          <li class="container__events__li">
+            <i class="container__events__year"> 1890</i>
+            <p class="container__events__details">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium quidem soluta id harum repudiandae quisquam
+              repellendus corporis cum dolores eaque!
+            </p>
+          </li>
+
+          <li class="container__events__li">
+            <i class="container__events__year"> 1890</i>
+            <p class="container__events__details">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium quidem soluta id harum repudiandae quisquam
+              repellendus corporis cum dolores eaque!
+            </p>
+          </li>
+
+          <li class="container__events__li">
+            <i class="container__events__year"> 1890</i>
+            <p class="container__events__details">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium quidem soluta id harum repudiandae quisquam
+              repellendus corporis cum dolores eaque!
+            </p>
+          </li>
+
+          <li class="container__events__li">
+            <i class="container__events__year"> 1890</i>
+            <p class="container__events__details">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium quidem soluta id harum repudiandae quisquam
+              repellendus corporis cum dolores eaque!
+            </p>
+          </li>
         </ul>
       </section>
     </main>
