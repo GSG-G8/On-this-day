@@ -8,7 +8,6 @@ const weatherInfo = data => {
   const city = document.createElement("h1");
   city.textContent = data.name;
   header.appendChild(city);
-
   const descriptin = document.createElement("h1");
   descriptin.textContent = data.weather[0].description;
   header.appendChild(descriptin);
