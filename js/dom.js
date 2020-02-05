@@ -29,19 +29,11 @@ dateToSearch.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     eventContainer.textContent = "";
     historyUrl = `https://cors-anywhere.herokuapp.com/history.muffinlabs.com/date/${dateToSearch.value}`;
-    xhr(historyUrl, getData);
+    xhr(historyUrl, data => show(data.data.Events));
   }
 });
 
 xhr(historyUrl, data => show(data.data.Events));
-
-activities.addEventListener("click", () => {
-  const options = activities.querySelectorAll("option");
-  const count = options.length;
-  if (typeof count === "undefined" || count < 2) {
-    xhr(historyUrl, historyInfo);
-  }
-});
 
 activities.addEventListener("change", () => {
   if (activities.value == "events") {
