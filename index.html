@@ -19,18 +19,14 @@
     <main>
       <section class="container">
         <h2 class="container__title">On This Day</h2>
-        <div class="container__inputGroup">
-          <label for="date">Date: </label>
-          <input
-            class="container__input"
-            id="date"
-            type="text"
-            placeholder="12/07 first month"
-          />
-          <button class="container__sort">
-            sort <i class="fa fa-sort"></i>
-          </button>
-        </div>
+        <label for="date">Date: </label>
+        <input
+          class="container__input"
+          id="date"
+          type="text"
+          placeholder="12/07 first month"
+          value="2/07"
+        />
         <label for="filterByCategory"
           >filter by
           <select
@@ -38,7 +34,6 @@
             name="filterByCategory"
             class="selectCategory"
           >
-            <option value="all">All</option>
             <option value="events">EVENTS</option>
             <option value="born">BORN ON THIS DAY</option>
             <option value="died">DIED ON THIS DAY</option>
