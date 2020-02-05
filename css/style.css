@@ -50,16 +50,6 @@
 .container__input:focus {
   outline: white;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-  padding: 10px;
-  width: 100%;
-  margin-top: 50px;
-  color: #ffffff;
-  background-color: #11123f;
-  text-align: center;
-}
 
 .container__events__year {
   background-color: #11123f;
@@ -107,6 +97,16 @@
 .event__link:hover {
   color: red;
   cursor: pointer;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  margin-top: 50px;
+  color: #ffffff;
+  background-color: #11123f;
+  text-align: center;
 }
 
 @media (min-width: 800px) {
