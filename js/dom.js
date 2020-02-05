@@ -25,12 +25,6 @@ const urlweather =
 
 xhr(urlweather, weatherInfo);
 
-//on this day information
-const getData = data => {
-  cleardate(eventContainer);
-  show("Events", data);
-};
-
 dateToSearch.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     eventContainer.textContent = "";
@@ -39,7 +33,7 @@ dateToSearch.addEventListener("keyup", function(event) {
   }
 });
 
-xhr(historyUrl, getData);
+xhr(historyUrl, data => show(data.data.Events));
 
 activities.addEventListener("click", () => {
   const options = activities.querySelectorAll("option");
@@ -51,30 +45,15 @@ activities.addEventListener("click", () => {
 
 activities.addEventListener("change", () => {
   if (activities.value == "events") {
-    xhr(historyUrl, showEvents);
+    xhr(historyUrl, data => show(data.data.Events));
   } else if (activities.value == "born") {
-    xhr(historyUrl, showborn);
+    xhr(historyUrl, data => show(data.data.Births));
   } else if (activities.value == "died") {
-    xhr(historyUrl, showdied);
+    xhr(historyUrl, data => show(data.data.Deaths));
   } else {
     xhr(historyUrl, historyInfo);
   }
 });
-
-const showEvents = data => {
-  cleardate(eventContainer);
-  show("Events", data);
-};
-
-const showborn = data => {
-  cleardate(eventContainer);
-  show("Births", data);
-};
-
-const showdied = data => {
-  cleardate(eventContainer);
-  show("Deaths", data);
-};
 
 const cleardate = myNode => {
   while (myNode.firstChild) {
@@ -82,9 +61,9 @@ const cleardate = myNode => {
   }
 };
 
-const show = (option, data) => {
+const show = arr => {
   cleardate(eventContainer);
-  for (let i = data.data[option].length - 1; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     let event = document.createElement("li");
     event.className = "container__events__li";
     eventContainer.appendChild(event);
@@ -93,15 +72,16 @@ const show = (option, data) => {
     let details = document.createElement("p");
     details.className = "container__events__details";
     let eventLink = document.createElement("a");
+    eventLink.classList.add("event__link");
     eventLink.target = "_blank";
-    eventLink.href = data.data[option][i].links[0].link;
+    eventLink.href = arr[i].links[0].link;
 
     event.appendChild(year);
     event.appendChild(details);
     event.appendChild(eventLink);
 
-    year.textContent = data.data[option][i].year;
-    details.textContent = data.data[option][i].text;
+    year.textContent = arr[i].year;
+    details.textContent = arr[i].text;
     eventLink.textContent = "For more details";
   }
 };
