@@ -22,34 +22,38 @@ const urlweather =
 
 xhr(urlweather, weatherInfo);
 
-const historyInfo = data => {
-  dateToSearch.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-      for (let i = Object.keys(data).length - 1; i >= 0; i--) {
-        let event = document.createElement("li");
-        event.className = "container__events__li";
-        eventContainer.appendChild(event);
-        let year = document.createElement("i");
-        year.className = "container__events__year";
-        let details = document.createElement("p");
-        details.className = "container__events__details";
-        let eventLink = document.createElement("a");
-        eventLink.target = "_blank";
-        eventLink.href = data.data.Events[i].links[0].link;
+const getData = data => {
+  for (let i = data.data.Events.length - 1; i >= 0; i--) {
+    let event = document.createElement("li");
+    event.className = "container__events__li";
+    eventContainer.appendChild(event);
+    let year = document.createElement("i");
+    year.className = "container__events__year";
+    let details = document.createElement("p");
+    details.className = "container__events__details";
+    let eventLink = document.createElement("a");
+    eventLink.target = "_blank";
+    eventLink.href = data.data.Events[i].links[0].link;
 
-        event.appendChild(year);
-        event.appendChild(details);
-        event.appendChild(eventLink);
+    event.appendChild(year);
+    event.appendChild(details);
+    event.appendChild(eventLink);
 
-        year.textContent = data.data.Events[i].year;
-        details.textContent = data.data.Events[i].text;
-        eventLink.textContent = "For more details";
-      }
-    }
-  });
+    year.textContent = data.data.Events[i].year;
+    details.textContent = data.data.Events[i].text;
+    eventLink.textContent = "For more details";
+  }
 };
 
-const historyUrl = `http://history.muffinlabs.com/date/${dateToSearch.value}`;
+dateToSearch.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    eventContainer.textContent = "";
+    const historyUrl = `https://cors-anywhere.herokuapp.com/history.muffinlabs.com/date/${dateToSearch.value}`;
+    xhr(historyUrl, getData);
+  }
+});
 
-xhr(historyUrl, historyInfo);
+const historyUrlToday = `https://cors-anywhere.herokuapp.com/history.muffinlabs.com/date`;
+
+xhr(historyUrlToday, getData);
 window.onload = document.querySelector(".container__input").focus();
