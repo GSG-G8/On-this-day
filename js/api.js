@@ -1,6 +1,6 @@
 const xhr = (url, callback) => {
   const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       let data = xhr.responseText;
       data = JSON.parse(data);
