@@ -20,8 +20,7 @@ const weatherInfo = data => {
   temp.textContent = Math.round(data.main.temp) + "℃";
   header.appendChild(temp);
 };
-const urlweather =
-  "https://api.openweathermap.org/data/2.5/weather?lat=31.5&lon=34.5&appid=795a73f80e1447a92a70669a7c739689&units=metric";
+const urlweather = `https://api.openweathermap.org/data/2.5/weather?lat=31.5&lon=34.5&appid=${id}`;
 
 xhr(urlweather, weatherInfo);
 
