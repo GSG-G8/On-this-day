@@ -5,7 +5,7 @@ let historyUrl = `https://cors-anywhere.herokuapp.com/history.muffinlabs.com/dat
 let lat = 31.5;
 let lon = 34.5;
 window.onload = document.querySelector(".container__input").focus();
-const activities = document.getElementById("filterByCategory");
+const activities = document.querySelector("#filterByCategory");
 
 //weather information
 const weatherInfo = data => {
@@ -17,9 +17,10 @@ const weatherInfo = data => {
   header.appendChild(descriptin);
 
   const temp = document.createElement("h1");
-  temp.textContent = Math.round(data.main.temp) + "℃";
+  temp.textContent = data.main.temp + "℃";
   header.appendChild(temp);
 };
+// const id = "795a73f80e1447a92a70669a7c739689&units=metric";
 const urlweather = `https://api.openweathermap.org/data/2.5/weather?lat=31.5&lon=34.5&appid=${id}`;
 
 xhr(urlweather, weatherInfo);
@@ -42,7 +43,7 @@ activities.addEventListener("change", () => {
   } else if (activities.value == "died") {
     xhr(historyUrl, data => show(data.data.Deaths));
   } else {
-    xhr(historyUrl, historyInfo);
+    xhr(historyUrl, data => show(data.data.Events));
   }
 });
 
