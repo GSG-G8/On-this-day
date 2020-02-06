@@ -56,22 +56,20 @@ const cleardate = myNode => {
 const show = arr => {
   cleardate(eventContainer);
   for (let i = arr.length - 1; i >= 0; i--) {
-    let event = document.createElement("li");
+    const event = document.createElement("li");
+    const year = document.createElement("i");
+    const details = document.createElement("p");
+    const eventLink = document.createElement("a");
     event.className = "container__events__li";
-    eventContainer.appendChild(event);
-    let year = document.createElement("i");
     year.className = "container__events__year";
-    let details = document.createElement("p");
     details.className = "container__events__details";
-    let eventLink = document.createElement("a");
     eventLink.classList.add("event__link");
     eventLink.target = "_blank";
     eventLink.href = arr[i].links[0].link;
-
+    eventContainer.appendChild(event);
     event.appendChild(year);
     event.appendChild(details);
     event.appendChild(eventLink);
-
     year.textContent = arr[i].year;
     details.textContent = arr[i].text;
     eventLink.textContent = "For more details";
